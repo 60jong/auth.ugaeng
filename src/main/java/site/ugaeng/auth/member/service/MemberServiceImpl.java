@@ -4,8 +4,8 @@ import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import site.ugaeng.auth.entity.AuthInfo;
-import site.ugaeng.auth.entity.Member;
+import site.ugaeng.auth.auth.entity.AuthInfo;
+import site.ugaeng.auth.member.entity.Member;
 import site.ugaeng.auth.member.repository.MemberRepository;
 import site.ugaeng.auth.member.service.dto.MemberJoinParams;
 
@@ -24,7 +24,7 @@ public class MemberServiceImpl implements MemberService {
 
     Long memberId = memberRepository.save(member);
 
-    log.info("New member [{}] joined", memberId);
+    log.info("New member [id : {}] joined", memberId);
     return memberId;
   }
 

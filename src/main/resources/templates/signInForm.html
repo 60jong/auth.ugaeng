@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign In</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+  <script th:src="@{/scripts/main.js}"></script>
+</head>
+<body>
+<nav>
+  <div class="nav-buttons">
+    <a href="#" class="nav-link join-us" th:href="@{/signup}">Join us!</a>
+  </div>
+</nav>
+<main class="signin-container">
+  <div class="logo-container">
+    <img th:src="@{/img/ugaeng_logo.png}" alt="ugaeng Logo" class="logo">
+  </div>
+  <form class="signin-form" onsubmit="submitForm(event, 'signin-form')">
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="password" name="password" placeholder="Password" required>
+    <button type="submit" >Enter</button>
+  </form>
+</main>
+</body>
+</html>

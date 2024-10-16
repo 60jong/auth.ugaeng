@@ -3,7 +3,7 @@ package site.ugaeng.auth.member.repository;
 import jakarta.persistence.EntityManager;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
-import site.ugaeng.auth.entity.Member;
+import site.ugaeng.auth.member.entity.Member;
 
 import java.util.List;
 

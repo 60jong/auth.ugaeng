@@ -1,6 +1,6 @@
 package site.ugaeng.auth.member.service;
 
-import site.ugaeng.auth.entity.Member;
+import site.ugaeng.auth.member.entity.Member;
 import site.ugaeng.auth.member.service.dto.MemberJoinParams;
 
 public interface MemberService {

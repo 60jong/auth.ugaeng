@@ -1,4 +1,4 @@
-package site.ugaeng.auth.entity;
+package site.ugaeng.auth.auth.entity;
 
 import jakarta.persistence.Embeddable;
 import lombok.NoArgsConstructor;

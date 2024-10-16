@@ -1,6 +1,6 @@
 package site.ugaeng.auth.member.repository;
 
-import site.ugaeng.auth.entity.Member;
+import site.ugaeng.auth.member.entity.Member;
 
 import java.util.List;
 

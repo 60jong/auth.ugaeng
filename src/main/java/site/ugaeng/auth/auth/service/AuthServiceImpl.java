@@ -6,8 +6,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import site.ugaeng.auth.auth.service.dto.SignInParams;
 import site.ugaeng.auth.auth.service.dto.SignUpParams;
-import site.ugaeng.auth.entity.AuthInfo;
-import site.ugaeng.auth.entity.Member;
+import site.ugaeng.auth.auth.entity.AuthInfo;
+import site.ugaeng.auth.member.entity.Member;
 import site.ugaeng.auth.member.service.MemberService;
 import site.ugaeng.auth.member.service.dto.MemberJoinParams;
 
@@ -22,9 +22,9 @@ public class AuthServiceImpl implements AuthService {
     @Transactional
     public Long signUp(final SignUpParams params) {
         Long memberId = memberService.joinMember(
-            new MemberJoinParams(params.getName(), params.getEmail(), params.getPassword()));
+            new MemberJoinParams(params.getUsername(), params.getEmail(), params.getPassword()));
 
-        log.info("New member [{}] joined", memberId);
+        log.info("Member [id : {}] signed up successfully", memberId);
         return memberId;
     }
 
@@ -37,6 +37,7 @@ public class AuthServiceImpl implements AuthService {
         final AuthInfo authInfo = member.getAuthInfo();
 
         if (authInfo.matchPassword(password)) {
+            log.info("Member [id : {}] is authenticated.", member.getId());
             return member.getId();
         }
         return null;
